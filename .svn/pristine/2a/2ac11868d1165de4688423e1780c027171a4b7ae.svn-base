@@ -1,0 +1,37 @@
+<%-- 
+    Document   : header
+    Created on : Mar 13, 2016, 1:49:06 PM
+    Author     : vdeiv
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-center navbar-fixed" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="<c:url value="/index.htm"/>"><spring:message code="lbl.home"/></a>
+                    <a class="navbar-brand" href="<c:url value="/rooms.htm"/>"><spring:message code="lbl.rooms"/></a>
+                    <a class="navbar-brand" href="<c:url value="/students.htm"/>"><spring:message code="lbl.students"/></a>
+                    <a class="navbar-brand" href="<c:url value="/contacts.htm"/>"><spring:message code="lbl.contacts"/></a>
+                </div>
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <div class="container">
+                <img src="<%=request.getContextPath()%>/grot.jpg" width="50%" align="center">
+            </div>
+        </div>
+    </body>
+</html>

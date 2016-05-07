@@ -1,0 +1,31 @@
+<%-- 
+    Document   : roomForm
+    Created on : Mar 13, 2016, 8:28:54 PM
+    Author     : vdeiv
+--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>New room form</title>
+    </head>
+    <body>
+        <div id="container">
+            <jsp:include page="header.jsp" />
+            <h1>Submit a new room!</h1>
+            <form id="categoryForm" role="form" method="POST" action="<c:url value="/rooms.htm" />">
+                <input name="id" type="hidden" value="${room.id}"/>
+                <p class="form-group">
+                    <label class="control-label" for="street">Street (required):</label>
+                    <input id="street" name="street" value="${room.street}">
+                </p>
+                <p>
+                <label for="save">&nbsp;</label>
+                <input id="save" type="submit" value="Save">
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+lbl.welcome=Sveiki atvyk\u0119
+lbl.home=Namai
+lbl.rooms=Kambariai
+lbl.students=Studentai
+lbl.contacts=Kontaktai
+lbl.addRoom=Prid\u0117ti kambar\u012f
+lbl.edit=Redaguoti
+lbl.delete=I\u0161trinti
+lbl.roomsTitle=Visi registruoti kambariai
+lbl.addStudent=Prid\u0117ti student\u0105
+lbl.street=Gatv\u0117
+lbl.houseNumber=Namo numeris
+lbl.roomNumber=Kambario numeris
+lbl.occupied=Laisva
+lbl.freeSpace=Laisvos vietos
+lbl.students=Studentai
+lbl.name=Vardas
+lbl.surname=Pavard\u0117
+lbl.age=Am\u017eius
+lbl.university=Universitetas
+lbl.country=\u0160alis
+lbl.gender=Lytis
+lbl.submitNewRoom=Registruoti nauj\u0105 kambar\u012f!
+lbl.save=I\u0161saugoti
+lbl.registerNewStudent=Registruoti nauj\u0105 student\u0105!
+lbl.selectRoom=Pasirinkti kambar\u012f:
+lbl.deleteStudent=I\u0161trinti student\u0105
+lbl.editRoom=Redaguoti kambar\u012f
+lbl.deleteRoom=I\u0161trinti kambar\u012f
+lbl.updateStudent=Atnaujinti student\u0105
+lbl.male=Vyras
+lbl.female=Moteris
+lbl.maxStudents=Daugiausiai student\u0173
+lbl.free=Laisva

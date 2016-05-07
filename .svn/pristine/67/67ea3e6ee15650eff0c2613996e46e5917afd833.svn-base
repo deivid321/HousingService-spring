@@ -1,0 +1,13 @@
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+lbl.welcome=Welcome
+lbl.home=Home
+lbl.rooms=Rooms
+lbl.students=Students
+lbl.contacts=Contacts
+lbl.addRoom=Add room
+lbl.edit=Edit
+lbl.delete=Delete
+lbl.roomsTitle=All provided rooms
+lbl.addStudent=Add Student

@@ -1,0 +1,75 @@
+<%-- 
+    Document   : rooms
+    Created on : Feb 29, 2016, 5:21:28 PM
+    Author     : vdeiv
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Rooms</title>
+    </head>
+    <body>
+        <%@include file="header.jsp" %>
+        <h1><spring:message code="lbl.roomsTitle"/></h1>
+        <div class="container">
+
+            <!-- You can constrain the columns if you want -->
+            <div class="row">
+
+                <!--We could move it to the right with a blank div -->
+                <div class="col-md-2"></div>
+
+                <!-- Or we could use offset -->
+                <div class="col-md-8">
+
+                    <!-- The table class adds nice spacing and the other classes add additional style -->
+                    <table class="table table-bordered table-striped table-hover" align="center">
+                        <tbody>
+                            <tr>
+
+                                <!-- You can adjust the width of table columns as well -->
+                                <!--<th class="col-md-2"></td> -->
+
+                                <!-- Use text alignment like text-center or text-right -->
+                                <th class="text-center">Id</td>
+                                <th class="text-center"><spring:message code="lbl.street"/></td>
+                                <th class="text-center"><spring:message code="lbl.houseNumber"/></td>
+                                <th class="text-center"><spring:message code="lbl.roomNumber"/></td>
+                                <th class="text-center"><spring:message code="lbl.occupied"/></td>
+                                <th class="text-center"><spring:message code="lbl.freeSpace"/></td>
+                                <th class="text-center"><spring:message code="lbl.students"/></td>
+                                <th class="text-center"></td>
+                            </tr>
+                            <c:forEach var="room" items="${rooms}" varStatus="current">
+                                <tr>
+                                    <td>${room.id}</td>
+                                    <td>${room.street}</td>
+                                    <td>${room.houseNumber}</td>
+                                    <td>${room.roomNumber}</td>
+                                    <td>${room.free}</td>
+                                    <td>${room.maxStudents}</td>
+                                    <td nowrap>
+                                        <c:forEach var="student" items="${room.studentList}" varStatus="current">
+                                            ${student.name} ${student.surname}
+                                            <br>
+                                        </c:forEach>
+                                    </td>
+                                    <td align="center"><a href="<c:url value="rooms/${room.id}.htm"/>" class="btn btn-info" role="button"><spring:message code="lbl.edit"/></a></td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <form method="GET" action="<c:url value="/rooms/new.htm" />">
+            <button type="submit" class = "btn btn-df btn-lg" role = "button"><spring:message code="lbl.addRoom" /></button>
+        </form>
+    </body> 
+</html>

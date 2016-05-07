@@ -1,0 +1,58 @@
+<%-- 
+    Document   : roomForm
+    Created on : Mar 13, 2016, 8:28:54 PM
+    Author     : vdeiv
+--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>New room form</title>
+    </head>
+    <body>
+        <jsp:include page="header.jsp" />
+        <div id="container">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Submit a new room!</h1> 
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal row-border" role="form" method="POST" action="<c:url value="/rooms.htm" />">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" required="required">Street:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="street" class="form-control" value="${room.street}">
+                                    </div>
+                                    <label class="col-md-3 control-label">House number</label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="houseNumber" class="form-control" value="${room.houseNumber}">
+                                    </div>
+                                    <label class="col-md-3 control-label">Room number</label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="roomNumber" class="form-control" value="${room.roomNumber}">
+                                    </div>
+                                    <label class="col-md-3 control-label">Max Students</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" type="number" name="roomMaxStudents" min="1" max="3" value="${room.maxStudents}">
+                                    </div>
+                                    <label class="col-md-3 control-label">Free</label>
+                                    <div class="col-md-8">
+                                        <input type="checkbox" class="form-control">
+                                    </div>
+                                    <!--<label class="col-md-3 control-label" for="save">&nbsp;</label> -->
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-3">
+                                        <input id="save" type="submit" class="form-control" value="Save">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>

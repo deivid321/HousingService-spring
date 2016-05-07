@@ -1,0 +1,37 @@
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+lbl.welcome=Welcome
+lbl.home=Home
+lbl.rooms=Rooms
+lbl.students=Students
+lbl.contacts=Contacts
+lbl.addRoom=Add room
+lbl.edit=Edit
+lbl.delete=Delete
+lbl.roomsTitle=All provided rooms
+lbl.addStudent=Add Student
+lbl.street=Street
+lbl.houseNumber=House number
+lbl.roomNumber=Room number
+lbl.occupied=Occupied
+lbl.freeSpace=Free space
+lbl.students=Students
+lbl.name=Name
+lbl.surname=Surname
+lbl.age=Age
+lbl.university=University
+lbl.country=Country
+lbl.gender=Gender
+lbl.submitNewRoom=Submit a new room!
+lbl.save=Save
+lbl.registerNewStudent=Register new student!
+lbl.selectRoom=Select room:
+lbl.deleteStudent=Delete student
+lbl.editRoom=Edit room
+lbl.deleteRoom=Delete room
+lbl.updateStudent=Update student
+lbl.male=Male
+lbl.female=Female
+lbl.maxStudents=Max students
+lbl.free=Free

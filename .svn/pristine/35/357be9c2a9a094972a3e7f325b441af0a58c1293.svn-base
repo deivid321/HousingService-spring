@@ -1,0 +1,38 @@
+<%-- 
+    Document   : rooms
+    Created on : Feb 29, 2016, 5:21:28 PM
+    Author     : vdeiv
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Rooms</title>
+    </head>
+    <body>
+        <%@include file="header.jsp" %>
+        <h1>Welcome</h1>
+        <h1><spring:message code="lbl.roomsTitle"/></h1>
+        ${rooms}
+        <table align="center">
+            <c:forEach var="room" items="${rooms}" varStatus="current">
+                <tr>
+                    <td>${room.id}</td>
+                    <td>${room.street}</td>
+                    <td>${room.houseNumber}</td>
+                    <td>${room.roomNumber}</td>
+                    <td>${room.free}</td>
+                    <td>${room.maxStudents}</td>
+                    <td><a href="<c:url value="rooms/${room.id}.htm"/>" class="btn btn-info" role="button"><spring:message code="lbl.edit"/></a></td>
+                </tr>
+            </c:forEach>
+        </table>
+    </body>
+    <form method="GET" action="<c:url value="/rooms/new.htm" />">
+        <input type="submit" value=<spring:message code="lbl.addRoom" /> />
+    </form>
+</html>
