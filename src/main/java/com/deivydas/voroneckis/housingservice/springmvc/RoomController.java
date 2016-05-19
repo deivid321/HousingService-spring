@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,13 +51,14 @@ public class RoomController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String add(@Valid @ModelAttribute("room") Room room, BindingResult result) {
+    public String add(@Valid @ModelAttribute("room") Room room, BindingResult result, Model model) {
         //RoomValidator roomValidator = new RoomValidator();
         //roomValidator.validate(room, result);
         if (result.hasErrors()) {
             //ModelAndView object aan
             //modelAndView.addObject("erros", result.getAllErrors()); What is it?
             System.out.print("ERROR adding");
+            model.addAttribute("students", facade.getStudentsList());
             return "roomForm";
         }
         facade.addRoom(room);
@@ -64,12 +66,13 @@ public class RoomController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String update(@PathVariable long id, @Valid @ModelAttribute("room") Room room, BindingResult result) {
+    public String update(@PathVariable long id, @Valid @ModelAttribute("room") Room room, BindingResult result, Model model) {
         // RoomValidator roomValidator = new RoomValidator();
         //roomValidator.validate(room, result);
         if (result.hasErrors()) {
             System.out.print("ERRORAS updating" + result.toString());
-            return "roomForm";
+            model.addAttribute("students", facade.getStudentsList());
+            return "roomUpdate";
         }
         facade.updateRoom(room);
         return "redirect:/rooms.htm";

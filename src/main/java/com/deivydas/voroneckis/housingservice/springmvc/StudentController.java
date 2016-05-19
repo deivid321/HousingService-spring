@@ -12,6 +12,7 @@ import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,10 +44,11 @@ public class StudentController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute("student") Student student, BindingResult result) {
+    public String save(@Valid @ModelAttribute("student") Student student, BindingResult result, Model model) {
         if (result.hasErrors()) {
             //ModelAndView object aan
             //modelAndView.addObject("erros", result.getAllErrors()); What is it?
+            model.addAttribute("rooms", facade.getRoomsList());
             return "studentForm";
         }
         Room room = student.getRoom();
@@ -58,10 +60,11 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String update(@Valid @ModelAttribute("student") Student student, BindingResult result) {
+    public String update(@Valid @ModelAttribute("student") Student student, BindingResult result, Model model) {
         if (result.hasErrors()) {
             //return  new ModelAndView("studentForm", "rooms", roomList);
-            return "studentForm";
+            model.addAttribute("rooms", facade.getRoomsList());
+            return "studentUpdate";
         }
         Room room = student.getRoom();
         if (room != null && room.getStreet().equals("Without room")) {

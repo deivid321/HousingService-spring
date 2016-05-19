@@ -1,0 +1,6 @@
+com\deivydas\voroneckis\housingservice\springmvc\converters\StudentConverter.class
+com\deivydas\voroneckis\housingservice\springmvc\RoomController.class
+com\deivydas\voroneckis\housingservice\springmvc\StudentController.class
+com\deivydas\voroneckis\housingservice\springmvc\ContactsController.class
+com\deivydas\voroneckis\housingservice\springmvc\converters\RoomConverter.class
+com\deivydas\voroneckis\housingservice\springmvc\validators\RoomValidator.class

@@ -41,7 +41,7 @@
                                 </div>
                                 <label class="col-md-3 control-label"><spring:message code="lbl.age"/>:</label>
                                 <div class="col-md-8">
-                                    <form:input type="number" path="age" class="form-control" />
+                                    <form:input type="number" path="age" class="form-control" required="required"/>
                                     <form:errors path="age" cssClass="error" />
                                 </div>
                                 <label class="col-md-3 control-label"><spring:message code="lbl.university"/>:</label>

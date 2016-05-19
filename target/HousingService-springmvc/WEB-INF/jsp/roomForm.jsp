@@ -27,37 +27,45 @@
                         <form:form class="form-horizontal row-border" commandName="room" role="form" method="POST" action="${pageContext.request.contextPath}/rooms.htm">
                             <form:hidden path="${room.id}"/>
                             <div class="form-group">
-                                <label class="col-md-3 control-label" required="required"><spring:message code="lbl.street"/>:</label>
-                                <div class="col-md-8">
+                                <label class="col-md-4 control-label" required="required"><spring:message code="lbl.street"/>:</label>
+                                <div class="col-md-7">
                                     <form:input type="text" path="street" class="form-control"/>
                                     <form:errors path="street" cssClass="error" />
                                 </div>
-                                <label class="col-md-3 control-label"><spring:message code="lbl.houseNumber"/></label>
-                                <div class="col-md-8">
+                                <div class="col-md-1"></div>
+                                <label class="col-md-4 control-label"><spring:message code="lbl.houseNumber"/></label>
+                                <div class="col-md-7">
                                     <form:input type="number" path="houseNumber" class="form-control" value="${room.houseNumber}"/>
                                     <form:errors path="houseNumber" cssClass="error" />
                                 </div>
-                                <label class="col-md-3 control-label"><spring:message code="lbl.roomNumber"/></label>
-                                <div class="col-md-8">
+                                <div class="col-md-1"></div>
+                                <label class="col-md-4 control-label"><spring:message code="lbl.roomNumber"/></label>
+                                <div class="col-md-7">
                                     <form:input type="number" path="roomNumber" class="form-control" value="${room.roomNumber}"/>
                                     <form:errors path="roomNumber" cssClass="error" />
                                 </div>
-                                <label class="col-md-3 control-label"><spring:message code="lbl.maxStudents"/></label>
-                                <div class="col-md-8">
+                                <div class="col-md-1"></div>
+                                <label class="col-md-4 control-label"><spring:message code="lbl.maxStudents"/></label>
+                                <div class="col-md-7">
                                     <form:input class="form-control" type="number" path="maxStudents" name="maxStudents" min="1" max="3" value="${room.maxStudents}"/>
                                     <form:errors path="maxStudents" cssClass="error" />
                                 </div>
-                                <label class="col-md-3 control-label"><spring:message code="lbl.free"/></label>
-                                <div class="col-md-8">
+                                <div class="col-md-1"></div>
+                                <div class="clearfix visible-md-block"></div>
+                                <label class="col-md-4 control-label"><spring:message code="lbl.free"/></label>
+                                <div class="col-md-5">
                                     <form:checkbox path="free"/>
                                 </div>
-                                <label class="col-md-3 control-label">Select student</label>
-                                <div class="col-md-8">
+                                <div class="col-md-3"></div>
+                                <div class="clearfix md-block"></div>
+                                <label class="col-md-4 control-label">Select student</label>
+                                <div class="col-md-7">
                                     <form:select class="form-control" path="studentList">
                                         <form:options items="${students}" itemValue="id" itemLabel="name"/>
                                     </form:select>
                                 </div>
-                                <div class="col-md-3"></div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4"></div>
                                 <div class="col-md-3">
                                     <input id="save" type="submit" class="form-control" value="<spring:message code="lbl.save"/>">
                                 </div>
